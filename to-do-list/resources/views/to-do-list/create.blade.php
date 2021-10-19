@@ -24,15 +24,22 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    @elseif(Session::has('error'))
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong class="text-danger">{{ Session::get('error') }}</strong> 
+                   
+                @elseif ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <strong class="text-danger">{{ $error }}</strong> 
+                            @endforeach
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
-
+                        </ul>
+                    </div>
                 @endif
+
+              
+                
                 {{-- end of success message --}}
 
 
