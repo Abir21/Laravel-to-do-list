@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ToDoListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', action:'App\Http\Controllers\ToDoListController@index');
+//string syntax declaration
+//Route::get('/', 'App\Http\Controllers\ToDoListController@index');
+
+//Php callable syntax declaration
+Route::get('/', [ToDoListController::class, 'index']);
     
-Route::get('/', function () {
-    return view('to-do-list.create');
-});
+Route::get('/create/to-do-list', [ToDoListController::class, 'create'])->name('create_list');
 
