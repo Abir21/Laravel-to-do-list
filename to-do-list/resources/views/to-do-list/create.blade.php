@@ -15,6 +15,27 @@
         <div class="container">
             <div class="offset-2 col-md-8 my-5">
                 <h1 class="text-success">What would you love to do?</h1><hr>
+
+                {{-- successfully list updated message --}}
+                @if(Session::has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong class="text-success">{{ Session::get('message') }}</strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @elseif(Session::has('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong class="text-danger">{{ Session::get('error') }}</strong> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                @endif
+                {{-- end of success message --}}
+
+
                 <hr style="background: darkslategrey">
                 <form action="{{ route('store_list') }}" method="post" class="form-inline">
                     @csrf

@@ -20,4 +20,4 @@ use App\Http\Controllers\ToDoListController;
 Route::get('/', [ToDoListController::class, 'index']);
     
 Route::get('/create/lists', [ToDoListController::class, 'create'])->name('create_list');
-Route::get('/store/lists', [ToDoListController::class, 'store'])->name('store_list');
+Route::post('/store/lists', [ToDoListController::class, 'store'])->name('store_list');
