@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', action:'App\Http\Controllers\ToDoListController@index');
+    
 Route::get('/', function () {
-    return view('welcome');
+    return view('to-do-list.create');
 });
+
