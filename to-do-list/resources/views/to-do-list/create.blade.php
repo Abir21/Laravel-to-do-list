@@ -16,7 +16,7 @@
             <div class="offset-2 col-md-8 my-5">
                 <h1 class="text-success">What would you love to do?</h1><hr>
                 <hr style="background: darkslategrey">
-                <form action="" method="post" class="form-inline">
+                <form action="{{ route('store_list') }}" method="post" class="form-inline">
                     @csrf
                     <div class="form-group mx-sm-3 mb-3">
                         <label for="title" class="sr-only">Topic</label>

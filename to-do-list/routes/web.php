@@ -19,5 +19,5 @@ use App\Http\Controllers\ToDoListController;
 //Php callable syntax declaration
 Route::get('/', [ToDoListController::class, 'index']);
     
-Route::get('/create/to-do-list', [ToDoListController::class, 'create'])->name('create_list');
-
+Route::get('/create/lists', [ToDoListController::class, 'create'])->name('create_list');
+Route::get('/store/lists', [ToDoListController::class, 'store'])->name('store_list');
